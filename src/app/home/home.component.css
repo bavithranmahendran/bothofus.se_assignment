@@ -1,0 +1,24 @@
+.titleDiv{
+    background-color: #3f51b5;
+}
+
+ #details{
+    float: left;
+    width: 30%;
+    
+}
+
+#map{
+    float: right;
+    width: 70%;
+}
+
+.ListOfData{
+    height: 500px;
+    overflow-y: scroll;
+   
+  }
+  
+agm-map {
+    height: 550px;
+  }

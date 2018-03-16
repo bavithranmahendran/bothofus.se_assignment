@@ -1,0 +1,65 @@
+
+<div class="titleDiv" style="text-align:center"> 
+  <img  class="img-responsive" src="../../assets/img/ang.png">
+</div>
+
+
+<div class="row" style="width:100%;">
+  <div id="details">
+      <mat-tab-group>
+          <mat-tab label="Restaurants">
+            <div class='ListOfData'>
+              <table   >
+                  <tbody>
+                      <tr *ngFor="let restaurant of restaurantData"  style="width:  100%;">
+                          <button type="button" label="Click" class='listButton' style="width:  100%;" (click)="fetchtoMap(restaurant)" >
+                          <td >
+                              <label> Name: </label>{{restaurant.name}}
+                              <br>
+                              <label> Address: </label>{{restaurant.address}}
+                              <br>
+                              <label> Telephone: </label>{{restaurant.telephone}}
+                              <br>
+                              <label> Website: </label>{{restaurant.website}}
+                              <br>
+                              <label> Opening-hours:</label>{{restaurant.opening-hours}}
+                          </td>
+                         </button>
+                      </tr>
+                  </tbody>                
+              </table>            
+            </div>
+      
+          </mat-tab>
+          <mat-tab label="Events">
+                  <div class='ListOfData'>
+                          <table   >
+                              <tbody>
+                                  <tr *ngFor="let event of eventData"  style="width:  100%;">
+                                      
+                                      <td style="border-style: ridge;">
+                                          <label> Title: </label>{{event.Title}}
+                                          <br>
+                                          <label> Venue: </label>{{event.Venue}}
+                                          <br>
+                                          <label> Location: </label>{{event.Location}}
+                                          <br>
+                                          <label> EventType: </label>{{event.EventType}}
+                                          <br>
+                                          <label> EventDate:</label>{{event.EventDate}}
+                                      </td>
+                                     
+                                  </tr>
+                              </tbody>                
+                          </table>            
+                        </div>
+          </mat-tab>
+      </mat-tab-group>
+      
+  </div>
+  <div id="map" >
+      <agm-map [latitude]="35.948894" [longitude]="14.405364">
+          <agm-marker [(latitude)]="lat" [(longitude)]="lng"></agm-marker>
+      </agm-map>
+  </div>
+</div>  
